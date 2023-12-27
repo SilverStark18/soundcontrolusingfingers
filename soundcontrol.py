@@ -5,9 +5,6 @@ import math
 from ctypes import cast, POINTER
 from comtypes import CLSCTX_ALL
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
-
-
-
 # Function to detect a fist (with fingers in vertical direction and thumb in horizontal direction_
 def isFist(lmList):
     gesture = [False]*5    # True = Finger open, False = Finger closed
@@ -76,10 +73,10 @@ while True:
             cv2.line(img, (x1, y1), (x2, y2), (0, 0, 255), 3)
 
             length = math.dist((x1,y1), (x2,y2))
+
             #print(length)
 
-            #x_mid, y_mid = (x1+x2)//2, (y1+y2)//2     # (x_mid, y_mid) => Coordinate of Index Finger Tip
-            #cv2.circle(img, (x_mid, y_mid), 10, (255, 0, 9), cv2.FILLED)
+            
 
         volRange = volume.GetVolumeRange()
         minVol = volRange[0]
